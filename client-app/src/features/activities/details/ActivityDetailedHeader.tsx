@@ -26,6 +26,7 @@ interface IProps {
 const ActivityDetailedHeader: React.FC<IProps> = ({ activity }) => {
   const rootStore = useContext(RootStoreContext);
   const { attendActivity, cancelAttendance, loading } = rootStore.activityStore;
+  const host = activity.attendees.find(x => x.isHost);
 
   return (
     <Segment.Group>
@@ -46,7 +47,10 @@ const ActivityDetailedHeader: React.FC<IProps> = ({ activity }) => {
                 />
                 <p>{format(activity.date, "eeee do MMMM")}</p>
                 <p>
-                  Hosted by <strong>Bob</strong>
+                  Hosted by{" "}
+                  <Link to={`/profile/${host!.username}`}>
+                    <strong>{host!.displayName}</strong>
+                  </Link>
                 </p>
               </Item.Content>
             </Item>
