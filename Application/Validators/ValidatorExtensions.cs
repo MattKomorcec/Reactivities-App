@@ -4,6 +4,9 @@ namespace Application.Validators
 {
     public static class ValidatorExtensions
     {
+        /// <summary>
+        /// This method adds custom Password validation rule.
+        /// </summary>
         public static IRuleBuilder<T, string> Password<T>(this IRuleBuilder<T, string> ruleBuilder)
         {
             var options = ruleBuilder
