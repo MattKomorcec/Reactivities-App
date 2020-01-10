@@ -4,11 +4,7 @@ import { RootStoreContext } from "../../app/stores/rootStore";
 import TextInput from "../../app/common/form/TextInput";
 import TextAreaInput from "../../app/common/form/TextAreaInput";
 import { Form as FinalForm, Field } from "react-final-form";
-import {
-  combineValidators,
-  isRequired,
-  hasLengthGreaterThan
-} from "revalidate";
+import { combineValidators, isRequired } from "revalidate";
 import { observer } from "mobx-react-lite";
 
 const validate = combineValidators({
