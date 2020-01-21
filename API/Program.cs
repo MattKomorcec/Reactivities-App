@@ -16,7 +16,7 @@ namespace API
         {
             var host = CreateHostBuilder(args).Build();
 
-            using(var scope = host.Services.CreateScope())
+            using (var scope = host.Services.CreateScope())
             {
                 // Get all services
                 var services = scope.ServiceProvider;
@@ -45,7 +45,8 @@ namespace API
             Host.CreateDefaultBuilder(args)
             .ConfigureWebHostDefaults(webBuilder =>
             {
-                webBuilder.UseStartup<Startup>();
+                webBuilder
+                    .UseStartup<Startup>();
             });
     }
 }
